@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>OVHC</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+  	
+
+</head>
+<body>
+<style type="text/css">
+	#main_form{
+		/*border:0.5px solid;*/
+		margin:20px;
+	}
+	.top_blue_bar{
+		height:50px;
+		background-color: navy;
+		font-size: 1.15em;
+		padding:5px;
+		color:white;
+		border:0.5px solid;
+	}
+	input.check_input{
+		margin-right: 5px;
+
+	}
+
+	input[type=number]::-webkit-inner-spin-button,
+	input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    padding:3px;
+    line-height: 1
+	}	
+	
+	.form-single-box{
+		border:0.5px solid;
+		border-top:none;
+
+	}
+	.split-box-right{
+		padding-left:0px;
+
+	}
+	.split-box-left{
+		padding-right: 0px;
+	}
+	input[type="text"],input[type="date"],input[type="tel"],input[type="number"],
+	input[type="email"],textarea
+	{
+		border:none;
+		-webkit-appearance:none;
+		line-height: 1;
+	}
+
+	textarea{
+		resize: none;
+	}
+
+	.print-only-address-box{
+		display:none;
+	}
+
+	.empty-row{
+		height:30px;
+	}
+
+	.gap-between{
+		height:30px;
+		border:none;
+	}
+
+	table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+  	th{
+  		padding:5px;
+  	}
+
+  	.add_record_holder{
+  		display:block;
+  		}
+  	.payment-info{
+	  	font-size: 13px;
+	    text-align: justify;
+	    width: 90%;
+  	}
+
+  	#bank_account_bsb.small-numeric-text-box{
+	  	width: 25px;
+	    margin: 2px;
+	    border: 2px solid;
+	    text-align: center;
+  	}
+
+  	#bank_account_number.small-numeric-text-box{
+  		width: 25px;
+	    margin: 2px;
+	    border: 2px solid;
+
+  	}
+
+
+  	.direct-billing-info .form-single-box span{
+			padding: 3px;
+			font-size:0.9em;
+		}
+
+	.label-margin{
+		padding-left:3px;
+		margin-bottom: 0px;
+	}
+
+	div.form-single-box span{
+		padding-left:3px;
+	}
+
+	input[type="text"]{
+		width:50%;
+	}
+
+	#info-details-visit{
+		resize:none;
+		width:100%;
+		height:150px;
+	}
+
+
+/*--------------------------------------------------------------------------------*/
+
+  	@media all{
+  		.page-break{
+  			display:none;
+  		}
+  	}
+
+  /*--------------------------------------------------------------------------------------------*/
+	
+
+	@media screen and (max-width:995px){
+		.split-box-right{
+			/*background-color: red;*/
+			padding-right:15px;
+			padding-left:15px;
+
+		}
+
+		.split-box-left{
+			padding-left:15px;
+			padding-right:15px;
+		}
+
+		textarea#address.address-textarea{
+			width:50%;
+		}
+
+
+
+		
+	}
+
+
+/*--------------------------------------------------------------------------------------------*/
+
+	@media print {
+		.split-box-right{
+			width:50%;
+			padding-left: 0px;
+			padding-right:15px;
+			float:right;
+			
+		}
+
+		body{
+			height:100%;
+			font-size: 13px;
+		}
+
+		.col-md-12{
+			page-break-inside: avoid;
+			display:table-header-group;
+		}
+
+		@page {size: A4 landscape; }
+		
+		.split-box-left{
+			width:50%;
+			padding-right: 0px;
+			padding-left: 15px;
+			float:left;
+		}
+  
+  	.add_record_holder{
+  		display:none;
+  	}
+
+  	.page-break	{ display: block; page-break-before: always; }
+
+  	/*div{
+  		page-break-inside: avoid;
+  	}
+
+  */
+
+  .direct-billing-info .top_blue_bar{
+  	height:25px;
+  	font-size: 0.8em
+  }
+
+  .data-collection-info .top_blue_bar{
+  	height:25px;
+  	font-size: 0.8em
+
+  }
+
+  .data-collection-info .form-single-box{
+  	font-size: 12px
+  	/*line-height:0.8;*/
+  }
+  		
+  	
+
+  	/*.col-md-6{
+  		page-break-inside: avoid;
+  		display: table;
+  	}*/
+		
+	
+
+
+	#allianz-form-heading{
+		text-align: center;
+	}
+	.border-right{
+		border-right:0.5px solid;
+	}
+	.print-only-address-box{
+		display:block;
+
+	}
+	.screen-only-address{
+		display:none;
+	}
+	.post-code-print-only{
+		float:right;
+	}
+
+	.info-details-visit{
+		height:150px;
+
+	}
+	
+	/*.print-half-width{
+		width:30%;
+	}*/
+
+	.col-md-1 {width:8%;  float:left;}
+	.col-md-2 {width:16%; float:left;}
+	.col-md-3 {width:25%; float:left;}
+	.col-md-4 {width:33%; float:left;}
+	.col-md-5 {width:42%; float:left;}
+	.col-md-6 {width:50%; float:left;}
+	.col-md-7 {width:58%; float:left;}
+	.col-md-8 {width:66%; float:left;}
+	.col-md-9 {width:75%; float:left;}
+	.col-md-10{width:83%; float:left;}
+	.col-md-11{width:92%; float:left;}
+	.col-md-12{width:100%; float:left;}
+
+}
+
+/*------------------------------------------------------------------------------------*/
+
+
+
+</style>
+<div class="flex-container">
+	<div class="row">
+		<div class="col-md-12">
+			<img  id="allianz-form-heading" src="form_heading.bmp">
+		</div>
+	</div>
+	<form id="main_form">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="top_blue_bar">
+					<span>Policy holder details</span>
+					<label class="label-margin" for="address_change_checkmark"></label>
+					<input type="checkbox" class="check_input" id="address_change_checkmark" name="address_change_checkmark_box">please tick if your address has changed
+				</div>
+				<div class="form-single-box">
+					<label class="label-margin" for="policy_number">Policy number(must be provided)</label>
+					<input type="text"  class="text-input" name="policy_number" id="policy_number">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 split-box-left">
+				<div class="policy_type form-single-box">
+					<span>Type of policy</span>
+					<label class="label-margin" for="policy_type">Budget Visitors</label>
+					<input type="checkbox"  class="check_input" name="policy_type_b" id="policy_type_budget">
+					<label class="label-margin" for="policy_type">Visitors Plus</label>
+					<input type="checkbox"  class="check_input" name="policy_type_v" id="policy_type_visitor">
+				</div>
+				<div class=" form-single-box  title-row">
+					<span>Title</span>
+					<input type="checkbox"  class="check_input" name="title" id="title">
+					<label class="label-margin" for="title">Dr</label>
+					<input type="checkbox"  class="check_input" name="title" id="title">
+					<label class="label-margin" for="title">Mr</label>
+					<input type="checkbox"  class="check_input" name="title" id="title">
+					<label class="label-margin" for="title">Mrs</label>
+					<input type="checkbox"  class="check_input" name="title" id="title">
+					<label class="label-margin" for="title">Miss</label>
+					<input type="checkbox"  class="check_input" name="title" id="title">
+					<label class="label-margin" for="title">Ms</label>
+				</div>
+					<div class=" given-name form-single-box">
+						<label class="label-margin" for="fname">Given name</label>
+						<input type="text"  class="check_input" name="fname" id="given-name" autocomplete="name">	
+					</div>
+			</div>
+				<div class="col-md-6 split-box-right ">
+					<div class="form-single-box policy_type">
+						<label class="label-margin" for="policy_type">Single Plan</label>
+						<input type="checkbox"  class="check_input" name="policy_type_s" id="policy_type_single">
+						<label class="label-margin" for="policy_type">Dual family plan</label>
+						<input type="checkbox"  class="check_input" name="policy_type_d" id="policy_type_dual">
+						<label class="label-margin" for="policy_type">Multi family plan</label>
+						<input type="checkbox"  class="check_input" name="policy_type_m" id="policy_type_multi">
+					</div>
+					<div class="form-single-box family_name">
+						<label class="label-margin" for="family_name">Family name(surname)</label>
+						<input type="text"  name="family_name" id="family_name">
+					</div>
+					<div class="form-single-box other_name">
+						<label class="label-margin" for="other_name">Other name/s</label>
+						<input type="text"  name="other_name" id="other_name">
+					</div>
+				</div>		
+			</div>
+		<div class="row">
+			<div class="col-md-6 split-box-left">
+				<div class=" form-single-box dob ">
+					<label class="label-margin" for="dob">Date of Birth</label>
+					<input type="date"  name="dob" id="dob">
+				</div>
+			</div>
+			<div class="col-md-6 split-box-right">
+				<div class="gender form-single-box ">
+					<span>Gender:</span>
+					<input type="checkbox"  name="gender" id=m_checkbox>
+					<label class="label-margin" for="gender">M</label>
+					<input type="checkbox"  name="gender" id=f_checkbox >
+					<label class="label-margin" for="gender" class="label-margin">F</label>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 ">
+				<div class="screen-only-address form-single-box">
+					<label for ="address" name="address" class="label-margin">Address</label>
+					<textarea rows=2 cols= 130 class="address-textarea" name="address" id="address"></textarea>
+					<span class="right-box-postcode">
+						<label for="postcode" name="postcode" class="label-margin">Postcode</label>
+						<input type="number" id="postcode">
+					</span>
+				</div>
+
+				<!-- need to write a script which will take a value
+				from the address and postcode and add it to print layout -->
+				<div class="print-only-address-box">
+					<div class="form-single-box">
+						<span class="address-print-only"></span>
+					</div>
+					<div class="form-single-box empty-row">
+						<span class=post-code-print-only>Postcode:</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+
+			$(".screen-only-address textarea").on("focusout",add_address);
+			$(".screen-only-address input").on("focusout",add_postcode);
+			
+			
+			function add_address(){
+			var address=$(".screen-only-address textarea").val();
+			console.log("adding address");
+			$(".address-print-only").text("Address:"+address);
+		}
+
+			function add_postcode(){
+				var postcode=$(".screen-only-address input").val();
+				console.log("adding postcode");
+				$(".post-code-print-only").text("Postcode:"+postcode)
+
+			}
+
+		</script>
+		<div class="row ">
+			<div class="col-md-6 split-box-left">
+				<div class="form-single-box">
+					<label for="daytime-contact-number" class="label-margin">Daytime contact number:</label>
+					<input type="tel" name="daytime-contact" id="daytime-contact" >
+				</div>
+			</div>
+			<div class="col-md-6 split-box-right">
+				<div class="form-single-box">
+					<label for="mobile-number" class="label-margin">Mobile:</label>
+					<input type="tel" name="mobile" id="mobile-number" class="label-margin">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="email form-single-box">
+					<label for="email" class="label-margin">Email address:</label>
+					<input type="email" name="email" id="email" required aria-required=”true” class="label-margin">
+				</div>
+			</div>
+		</div>
+
+		<div class="row ">
+			<div class="col-md-6 split-box-left">
+				<div class="form-single-box">
+					<label for="passport" class="label-margin">Passport number:</label>
+					<input type="number" name="passport" id="passport">
+				</div>
+			</div>
+			<div class="col-md-6 split-box-right">
+				<div class="form-single-box">
+					<label for="nationality" class="label-margin">Nationality:</label>
+					<input type="text" name="nationality" id="nationality">
+				</div>
+			</div>
+		</div>
+		<div class="gap-between page-break"></div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="top_blue_bar">
+					<span>Details of expense claimed<span>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="table-container">
+					<table class="col-md-12">
+						<tr>
+						<th >Patient's first name</th>
+						<th >Provider of service(e.g. Dr Jones)</th>
+						<th >Provider number</th>
+						<th>Date of service(dd/mm/yyyy)<br>
+							(e.g. doctor visit or
+							 medicine purchase)</th>
+						<th>Amount of invoice</th>
+						<th>Have you already paid for the service?</th>
+						</tr>
+						<tr>
+							<td class="add_record_holder"><button>Click to add records and hit enter after entry</button></td>
+							<script type="text/javascript">
+								var table_html_to_add="<tr>"+
+								"<td class=counter></td>"+
+								"<td><input type=text"+" " +"class=providers-name>"+"</td>"+
+								"<td>"+"<input type="+"text"+" " +"class=providers-number>"+"</td>"+
+								"<td>"+"<input type="+"date"+" " +"class=date-of-service>"+"</td>"+
+								"<td>"+"<span>$</span>"+"<input type="+"number"+" " +"class=amount-of-service>"+"</td>"+
+								"<td>"+
+								"<label class="+"label-margin >"+"Yes"+"</label>"+
+								"<input type=checkbox class=check_input>"+"</td"
+								"</tr>"; 
+								
+								$(".add_record_holder button").on("click",function(){
+									var number_of_rows=($(".counter").length)+1
+									$("table").append(table_html_to_add);
+									$(".add_record_holder button").css("display","none");
+									$(".counter")[number_of_rows-1].innerHTML=("<span>"+number_of_rows+"."+"</span>"+"<input type= text"+" "+
+								"class=patient-name>");
+								})
+							</script>
+
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="payment-info">
+					<li>If accounts are unpaid, payments will be made directly to the provider. Please direct any enquiries from the provider to Allianz Global Assistance.</li>
+					<li>If accounts are paid, original tax invoices and receipts must be attached to process your claim.</li>
+					<li>If you hold a family policy (including dual family and multi-family policies) and are submitting a claim for a dependant covered by that policy, you
+					must ensure your dependant‘s details are registered on your policy. You can do this in the ‘Members’ section of the website or call our Members
+					Services on 1300 727 193</li>
+				</div>
+			</div>
+
+			<div class="col-md-12">
+				<div class="compulsory-section top_blue_bar">This section must be completed for all claims</div>
+					<div class="form-single-box accident_type">
+						<span>Are the expenses related to one of the following? </span>
+						<input type="checkbox" id="type_of_injury_work">
+						<label for="type_of_injury" class="label-margin">Work accident</label>
+						<input type="checkbox" id="type_of_injury_motor">
+						<label for="type_of_injury_motor" class="label-margin">Motor Accident</label>
+						<input type="checkbox" id=type_of_injury_na>
+						<label for="type_of_injury_na" class="label-margin">Not an accident</label>
+					</div>
+					<div class="form-single-box">
+						<input type="checkbox" id="type_of_injury_other" class="label-margin">
+						<label for="type_of_injury" class="label-margin">Other type of accident (please specify)</label>
+					</div>
+					<div class="form-single-box accident_type">
+						<span>Are the expenses claimed for a medical assessment, x-ray or blood tests required for the renewal or issue of your eligible visa? </span>
+						<input type="checkbox" id="visa_yes" class="label-margin">
+						<label for="visa_yes" class="label-margin">Yes</label>
+						<input type="checkbox" id="visa_no">
+						<label for="visa_no" class="label-margin">No</label>
+					</div>
+					<div class="form-single-box visa_attach_notice">
+						<span>Please Note: You are required to provide a copy of your current eligible visa when making a claim.</span>
+					</div>
+					<div class="form-single-box total_claim">
+						<span>Total amount of all claims lodged in this instance:$</span>
+						<input type="text">
+					</div>
+				</div>
+			</div>
+			<h5>PLEASE TURN OVER AND COMPLETE PAGE 2 OF THIS FORM</h5>
+			
+<!-- NExt page starts -->
+
+
+			<div class="gap-between page-break"></div>
+			
+			<div class="row">
+				<div class="col-md-6  print-half-width">
+					<div class="visit-info-doctor-box">
+						<div class="top_blue_bar">Complete this section if you saw a doctor<br>
+											or went to hospital</div>
+							<div class="form-single-box">
+								<span>Have you had this or a related condition before? </span>
+								<input type="checkbox" name="hospital-visit-yes" id="hospital-visit-yes">
+								<label for="hospital-visit-yes" class="label-margin">Yes</label>
+								<input type="checkbox" name="hospital-visit-yes" id="hospital-visit-no">
+								<label for="hospital-visit-no" class="label-margin">No</label>
+							</div>
+							<div class="info-details-visit form-single-box">
+								<span>If yes, please provide details (dates, name & address of treating doctors/s, treatment etc):</span>
+								<div>
+									<textarea name="info-details-visit" id="info-details-visit"></textarea>
+								</div>
+							</div>
+						</div>
+					<div class="payment-info-box">
+						<div class="top_blue_bar">Payment to Australian bank account by EFT<br>
+									(Electronic Funds Transfer)</div>
+						<div class="form-single-box">
+						Please provide correct bank account details to ensure prompt payment
+						(only complete if you have already paid the account and have attached
+						original tax invoices and receipts). If correct bank details are not
+						provided, a cheque will be sent to your Australian postal address	
+						</div>
+						<div class="form-single-box">
+							<label for="bank_name" class="label-margin">Name of financial institution:</label>
+							<input type="text" name="bank_name" id="bank_name">
+						</div>
+						<div class="form-single-box">
+							<label for="bank_account_holder" class="label-margin">Name of account holder:</label>
+							<input type="text" name="bank_account_holder form-single-box" id="bank_account_holder">
+						</div>
+						
+						<div class="form-single-box">
+							<span><label for="bank_acccount_bsb" class="label-margin">BSB number (6 digits):</label>
+							<input type="number" class="small-numeric-text-box" name="bank_account_bsb" id="bank_account_bsb">
+							<input type="number" class="small-numeric-text-box" name="bank_account_bsb" id="bank_account_bsb">
+							<input type="number" class="small-numeric-text-box" name="bank_account_bsb" id="bank_account_bsb">
+							<span class="gap-between"></span>
+							<input type="number" class="small-numeric-text-box" name="bank_account_bsb" id="bank_account_bsb">
+							<input type="number" class="small-numeric-text-box" name="bank_account_bsb" id="bank_account_bsb">
+							<input type="number" class="small-numeric-text-box" name="bank_account_bsb" id="bank_account_bsb">
+							</span>
+						</div>
+						<div class="form-single-box">
+							<span>
+							<label for="bank_acccount_bsb" class="label-margin">Account number (up to 9 digits):</label>
+							<input type="number" class="small-numeric-text-box" name="bank_account_number" id="bank_account_number">
+							<input type="number" class="small-numeric-text-box" name="bank_account_number" id="bank_account_number">
+							<input type="number" class="small-numeric-text-box" name="bank_account_number" id="bank_account_number">
+							<input type="number" class="small-numeric-text-box" name="bank_account_number" id="bank_account_number">
+							<input type="number" class="small-numeric-text-box" name="bank_account_number" id="bank_account_number">
+							<input type="number" class="small-numeric-text-box" name="bank_account_number" id="bank_account_number">
+							<input type="number" class="small-numeric-text-box" name="bank_account_number" id="bank_account_number">
+							<input type="number" class="small-numeric-text-box" name="bank_account_number" id="bank_account_number">
+							<input type="number" class="small-numeric-text-box" name="bank_account_number" id="bank_account_number">
+							</span>
+						</div>
+					</div>
+					<div class="gap-between"></div>
+					<div class="declaration-box">
+						<div class="top_blue_bar">Declaration</div>
+						<div class="form-single-box declaration-text">
+							I declare that all statements and particulars contained on this claim
+							form are true and correct.I authorise Allianz Global Assistance to contact the hospital orprovider of any service for further clarification of details relating to this claim if necessary.
+						</div>
+						<div class="form-single-box signature">
+							Signature:
+						</div>
+						<div class="form-single-box form_completion_date">
+							<span>Date:</span>
+							<input type="date" name="form-fill-date" id="form-fill-date">
+						</div>
+					</div>
+				
+					<div class="office-use-box"></div>
+					<div class="post-return-info"></div>
+					<div class="form-return-address"></div>
+				</div>
+				<div class="col-md-6">
+					<div class="direct-billing-info">
+						<div class="top_blue_bar">
+							Did you know?
+						</div>
+						<div class="form-single-box">
+							<span>Direct Billing Medical Providers</span><br> <span>Allianz Global Assistance has an extensive network of medical providers around Australia – show your valid membership card and you do not have to make a claim. The bill is sent directly to Allianz Global Assistance (some medical providers may charge a co-payment which cannot be claimed). Find your local Direct Billing Medical Providers online at www.ovhcallianzassistance.com.au.</span><br> 
+							<span>Online Services – www.ovhcallianzassistance.com.au</span><br> 
+							<span>Visit our website to:<span>
+										<br> 
+							<span>•	Renew your policy</span>
+										<br>
+							<span>• Order replacement membership cards</span> 
+											<br>
+							<span>•	View our helpful information video </span>
+
+											<br>
+
+							<span>• Read health and wellbeing information </span>
+
+										<br>
+
+							<span>24 Hour Emergency Helpline – 1800 814 781</span>
+
+							<br>
+
+										<span>Emergency access to medical, legal and interpreting services </span>
+						</div>
+					</div>
+				  <div class="data-collection-info">
+				  	<div class="top_blue_bar">
+						<span>Protection of your personal information</span>
+				  	</div>
+				  	<div class="form-single-box">
+					  	We collect your personal information To arrange, manage, and provide your OVHC health cover, we (AGA Assistance Australia Pty Ltd trading as Allianz Global Assistance as agent for the insurer, Lysaght Peoplecare Limited) collect, use, and disclose your personal information including sensitive information. We collect it from you as well as others including (but not limited to) your family members, travelling companions, universities, other educational institutions, Government Departments including those responsible for administering visa requirements for overseas visitors and students, doctors, hospitals, medical providers and others we consider necessary. We disclose your personal information to various persons and entities including those mentioned above as well as to others that assist us to provide our services and to carry out our normal business functions and processes including to claims investigators and for legal recovery purposes. For example, we collect, use, and disclose your name, address, date of birth, medical and other sensitive information for these purposes.
+					  	<br>
+				  	 We also use and disclose it so as to comply with regulatory requirements. When you make a claim under your policy, you agree and consent to us collecting, using and disclosing your personal information (including sensitive information) as set out above including to your healthcare provider.
+				  	 <br> 
+				  	 For more information about our handling of your personal information, including details about access, correction and complaints, please contact our Privacy Officer on (07) 3305 7000 or refer to our corporate privacy policy available on request or on the web at www.allianz-assistance.com.au.
+
+				  			
+				  		</div>
+				  	
+				  </div>
+				</div>
+			</div>
+
+
+	</form>
+</div>
+
+
+</body>
+
+</html>
+
+<script>
+// function unblur(selector){
+// 	var children=$(selector).children(); //suppose we have four descendants and these four have four each
+// 	if (children.length>0){ //holds true
+// 		console.log("children found");
+// 		for(var i=0;i<children.length;i++){ // loops through all descendants
+// 			console.log("looping in"+children[i])
+
+// 			if(children[i] instanceof Array){ //finds that it has more desccendant
+// 				console.log("array found"); //logs it
+// 				return unblur(children); //
+// 			}
+// 			else{
+// 				children[i].blur();
+
+// 			}
+
+// 		}
+
+
+// 	}
+
+ 
+// }
+
+// $(document).ready(function(){
+// 	unblur("body");
+// })
+</script>
